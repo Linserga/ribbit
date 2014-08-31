@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ribbits
+
   resources :sessions, only: [:create, :destroy]
   resources :users
 
