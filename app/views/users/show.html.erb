@@ -1,10 +1,13 @@
+<% if current_user %>
+	<%= render 'partials/new_form'%>
+<%end%>
 <div id='ribbits' class='panel left'>
 	<h1>Ribbit Profile</h1>
 	<div class='ribbitWrapper'>
 		<img class='avatar' src="<%= @user.avatar_url%>">
 		<span class='name'><%= @user.name %></span> @<%= @user.username%>
 		<p>
-			XX Ribbits
+			<%= pluralize(@user.ribbits.length, 'Ribbit') %>
 			<span class='spacing'>XX Follwers</span>
 			<span class='spacing'>XX Follwing</span>
 		</p>
