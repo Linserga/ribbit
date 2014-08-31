@@ -1,6 +1,9 @@
 require 'digest/md5'
 
 class User < ActiveRecord::Base
+	
+	has_many :ribbits, dependent: :destroy
+
 	has_secure_password
 
 	before_validation :prep_email
