@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :relationsips
+
   resources :ribbits
 
   resources :sessions, only: [:create, :destroy]
