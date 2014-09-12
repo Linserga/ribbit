@@ -31,6 +31,19 @@ class UsersController < ApplicationController
 		@relationship = Relationship.where(follower_id: current_user.id, followed_id: @user.id).first_or_initialize if current_user
 	end
 
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id])
+		if @user.update_attributes(user_params)
+			redirect_to @user, notice: "Profile updated"
+		else
+			render :edit
+		end
+	end
+
 	def buddies
 		if current_user
 			# buddies_ids = current_user.followeds.map{|user| user.id}.push(current_user.id)
