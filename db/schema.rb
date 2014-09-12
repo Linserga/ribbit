@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140907081145) do
 
-  create_table "relationsips", force: true do |t|
+  create_table "relationships", force: true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
     t.datetime "created_at"

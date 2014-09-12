@@ -1,5 +1,10 @@
 class RibbitsController < ApplicationController
 
+	def index
+		@ribbits = Ribbit.all
+		@ribbit = Ribbit.new
+	end
+
 	def create
 		@ribbit = current_user.ribbits.new(ribbit_params)
 

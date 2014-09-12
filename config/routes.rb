@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :relationsips
+  resources :relationships
 
   resources :ribbits
 
@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   get 'logout', to: 'sessions#destroy', as: 'logout' 
   # match 'logout', to: 'sessions#destroy', via: :delete
+  # get 'buddies', to: 'users#buddies', as: "buddies"
+
+  match 'buddies', to: 'users#buddies', via: :get
+
   root 'users#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
